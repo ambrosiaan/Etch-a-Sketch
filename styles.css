@@ -1,10 +1,18 @@
 body {
     background-image: linear-gradient(to right, #c6ffdd, rgb(255, 255, 180), pink);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px
+}
+
+#centerDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px
+}
+
+#topMenu {
+  display: flex;
+  gap: 30px;
 }
 
 #mainContainer {
@@ -17,7 +25,7 @@ body {
     background-color: rgb(204, 250, 204);
 }
 
-.hovered {
+.colored {
     background-color: pink;
 }
 

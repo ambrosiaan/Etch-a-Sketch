@@ -2,6 +2,7 @@ const gridSize = 600;
 let mouseDown = false;
 const mainContainer = document.querySelector('#mainContainer');
 
+createGrid(20)
 window.addEventListener('mousedown', () => mouseDown = true)
 window.addEventListener('mouseup', () => mouseDown = false)
 
@@ -21,6 +22,7 @@ function createGrid(numberOfSquares) {
         }
         mainContainer.appendChild(divRowContainer)
     }
+
     document.querySelectorAll('.div-grid').forEach(item => {
         item.addEventListener('mouseover', hoverEffect)
         let squareSize = determineSizePerSquare(numberOfSquares)
@@ -30,7 +32,7 @@ function createGrid(numberOfSquares) {
 }
 
 function hoverEffect(e) {
-    if (mouseDown) e.target.classList.add('hovered');
+    if (mouseDown) e.target.classList.add('colored');
 }
 
 function chooseNumberOfSquares() {
@@ -49,6 +51,12 @@ function deleteGrid() {
     document.querySelectorAll('.column-container').forEach(item => {
         mainContainer.removeChild(item)
 
+    })
+}
+
+function resetGrid() {
+    document.querySelectorAll('.div-grid').forEach(item => {
+        item.classList.remove('colored')
     })
 }
 
