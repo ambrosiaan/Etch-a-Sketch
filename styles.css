@@ -7,10 +7,8 @@ body {
 }
 
 .div-grid {
-    border-style: solid;
-    border-color: black;
-    width: 40px;
-    height: 40px;
+    border: 0.5px solid black ;
+    box-sizing: border-box;
     background-color: rgb(204, 250, 204);
 }
 

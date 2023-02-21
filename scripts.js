@@ -18,19 +18,24 @@ for (let i = 1; i<=numberOfSquares; i++ ){
     }
     mainContainer.appendChild(divRowContainer)
     }
+    document.querySelectorAll('.div-grid').forEach(item => {
+        item.addEventListener('mouseover', hoverEffect)
+        let squareSize = determineSizePerSquare(numberOfSquares)
+        item.style.height = `${squareSize}px`;
+        item.style.width = `${squareSize}px`;
+    })
 }
-
-document.querySelectorAll('.div-grid').forEach(item => {
-    item.addEventListener('mouseover', hoverEffect)
-})
 
 function hoverEffect(e) {
     console.log(e.target)
     e.target.classList.add('hovered');
 }
 
-function chooseAmountOfSquares() {
-    let amountOfSquares = prompt("Please choose the amount of squares per side")
-    createGrid(amountOfSquares)
+function chooseNumberOfSquares() {
+    let numberOfSquares = prompt("Please choose the amount of squares per side")
+    createGrid(numberOfSquares)
+}
 
+function determineSizePerSquare(numberOfSquares) {
+    return (600 / numberOfSquares)
 }
