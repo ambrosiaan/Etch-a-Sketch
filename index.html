@@ -10,10 +10,13 @@
 </head>
 
 <body>
+    <div id="leftDiv">
+        <button onclick="eraseMode(true)", class="button">Eraser</button>
+        <button onclick="eraseMode(false)", class="button">Pencil</button>
+    </div>
     <div id="centerDiv">
         <div id="topMenu">
-            <button onclick="chooseNumberOfSquares()" , id="numberOfSquaresBtn" , class="button">Choose amount of
-                squares</button>
+            <button onclick="chooseNumberOfSquares()" , id="numberOfSquaresBtn" , class="button">Choose amount of squares</button>
             <button onclick="resetGrid()" , id="resetBtn" , class="button">Reset</button>
         </div>
         <div id="mainContainer"></div>

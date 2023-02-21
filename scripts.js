@@ -1,4 +1,5 @@
 const gridSize = 600;
+let eraser = false;
 let mouseDown = false;
 const mainContainer = document.querySelector('#mainContainer');
 
@@ -24,16 +25,21 @@ function createGrid(numberOfSquares) {
     }
 
     document.querySelectorAll('.div-grid').forEach(item => {
-        item.addEventListener('mouseover', hoverEffect)
+        item.addEventListener('mouseover', changeTileColor)
         let squareSize = determineSizePerSquare(numberOfSquares)
         item.style.height = `${squareSize}px`;
         item.style.width = `${squareSize}px`;
     })
 }
 
-function hoverEffect(e) {
-    if (mouseDown) e.target.classList.add('colored');
+function eraseMode(booleanValue){
+    eraser = booleanValue
 }
+
+function changeTileColor(e) {
+    if (mouseDown && !eraser) e.target.classList.add('colored');
+    if (mouseDown && eraser) e.target.classList.remove('colored');
+    }
 
 function chooseNumberOfSquares() {
     let numberOfSquares = parseInt(prompt("Please choose the amount of squares per side"))
