@@ -12,7 +12,7 @@ body {
 }
 
 .div-grid {
-    border: 0.5px solid black ;
+    border: 0.5px solid lightgrey;
     box-sizing: border-box;
     background-color: rgb(204, 250, 204);
 }

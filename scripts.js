@@ -1,6 +1,9 @@
 const gridSize = 600;
+let mouseDown = false;
 const mainContainer = document.querySelector('#mainContainer');
-console.log(mainContainer)
+
+window.addEventListener('mousedown', () => mouseDown = true)
+window.addEventListener('mouseup', () => mouseDown = false)
 
 function createGrid(numberOfSquares) {
 
@@ -27,8 +30,7 @@ function createGrid(numberOfSquares) {
 }
 
 function hoverEffect(e) {
-    console.log(e.target)
-    e.target.classList.add('hovered');
+    if (mouseDown) e.target.classList.add('hovered');
 }
 
 function chooseNumberOfSquares() {
