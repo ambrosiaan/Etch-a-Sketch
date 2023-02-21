@@ -16,4 +16,11 @@ for (let i = 1; i<17; i++ ){
     mainContainer.appendChild(divRowContainer)
 }
 
-console.log(mainContainer)
+document.querySelectorAll('.div-grid').forEach(item => {
+    item.addEventListener('mouseover', hoverEffect)
+})
+
+function hoverEffect(e) {
+    console.log(e.target)
+    e.target.classList.add('hovered');
+}
