@@ -1,12 +1,15 @@
 const mainContainer = document.querySelector('#mainContainer');
 console.log(mainContainer)
 
-for (let i = 1; i<17; i++ ){
+
+function createGrid(numberOfSquares) {
+
+for (let i = 1; i<=numberOfSquares; i++ ){
     const divRowContainer = document.createElement('div');
     divRowContainer.id = `columnContainer${i}`;
     divRowContainer.classList.add('column-container');
 
-    for (let j = 1; j<17; j++ ){
+    for (let j = 1; j<=numberOfSquares; j++ ){
         const div = document.createElement('div');
         div.classList.add(`div-column-${i}`);
         div.classList.add(`div-row-${j}`);
@@ -14,6 +17,7 @@ for (let i = 1; i<17; i++ ){
         divRowContainer.appendChild(div)
     }
     mainContainer.appendChild(divRowContainer)
+    }
 }
 
 document.querySelectorAll('.div-grid').forEach(item => {
@@ -23,4 +27,10 @@ document.querySelectorAll('.div-grid').forEach(item => {
 function hoverEffect(e) {
     console.log(e.target)
     e.target.classList.add('hovered');
+}
+
+function chooseAmountOfSquares() {
+    let amountOfSquares = prompt("Please choose the amount of squares per side")
+    createGrid(amountOfSquares)
+
 }
