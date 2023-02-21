@@ -1,5 +1,10 @@
 body {
     background-image: linear-gradient(to right, #c6ffdd, rgb(255, 255, 180), pink);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
 }
 
 #mainContainer {
@@ -40,8 +45,6 @@ body {
     vertical-align: middle;
     white-space: nowrap;
     word-wrap: break-word;
-    margin: 0px 240px;
-    margin-bottom: 10px;
   }
   
   .button:hover {
