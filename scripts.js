@@ -32,7 +32,13 @@ function hoverEffect(e) {
 }
 
 function chooseNumberOfSquares() {
-    let numberOfSquares = prompt("Please choose the amount of squares per side")
+    let numberOfSquares = parseInt(prompt("Please choose the amount of squares per side"))
+        
+    while (numberOfSquares > 100 || numberOfSquares <= 0 || isNaN(numberOfSquares) ) {
+        console.log(numberOfSquares)
+        numberOfSquares = parseInt(prompt("Pleaes choose a real number between 1 and 100"))
+    }
+    
     deleteGrid()
     createGrid(numberOfSquares)
 }
