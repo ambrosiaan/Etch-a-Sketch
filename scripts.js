@@ -79,7 +79,7 @@ function toggleBorderStyle() {
 
 function randomColor() {
     var o = Math.round, r = Math.random, s = 50;
-    if (colorIteration < 25 ) {
+    if (colorIteration < 25 || (colorIteration < 100 && shadeColorIteration % 5 == 1)) {
         colorIteration = 256; 
         shadeColorIteration++;
     }
