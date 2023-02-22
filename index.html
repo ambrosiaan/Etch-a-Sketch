@@ -11,17 +11,26 @@
 
 <body>
     <div id="leftDiv">
-        <button onclick="pencilMode()", class="button">Pink</button>
+        <button onclick="pencilMode()", class="button">Pencil</button>
         <button onclick="eraseMode(true)", class="button">Eraser</button>
         <button onclick="toggleRainbow()", class="button">Toggle Rainbow</button>
         <button onclick="toggleBorderStyle()", class="button">Toggle Grid</button>
+        <button onclick="resetGrid()" , id="resetBtn" , class="button">Clear</button>
     </div>
     <div id="centerDiv">
-        <div id="topMenu">
-            <button onclick="chooseNumberOfSquares()" , id="numberOfSquaresBtn" , class="button">Choose amount of squares</button>
-            <button onclick="resetGrid()" , id="resetBtn" , class="button">Reset</button>
+        <div id="topText">
+            <h1>Make A sketch!</h1>
         </div>
         <div id="mainContainer"></div>
+        <div id="bottomMenu">
+            <!-- <button onclick="chooseNumberOfSquares()" , id="numberOfSquaresBtn" , class="button">Choose amount of pixels</button> -->
+            <div class="slidecontainer">
+                <h4>Pixel Size</h4>
+                <input type="range" min="3" max="80" value="20" class="slider" id="pixelSize">
+                <h4>Smallest to Largest</h4>
+              </div>
+    
+        </div>
     </div>
     <script src="scripts.js"></script>
 </body>

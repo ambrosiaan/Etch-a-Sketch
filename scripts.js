@@ -9,10 +9,18 @@ let colorIteration = 256; //Makes it so that the colors in rainbow mode get prog
 let shadeColorIteration = 0 //Makes it so that in rainbow mode different color shades alternate. First blue, green, purple, red, orange
 
 const mainContainer = document.querySelector('#mainContainer');
+const slider = document.getElementById("pixelSize");
 
 createGrid(20)
 window.addEventListener('mousedown', () => mouseDown = true)
 window.addEventListener('mouseup', () => mouseDown = false)
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    let numberOfSquares = this.value;
+    deleteGrid()
+    createGrid(numberOfSquares)
+}
 
 function createGrid(numberOfSquares) {
 
@@ -86,7 +94,7 @@ function returnColorShade(shadeColorIteration, o,r,s) {
         case 0:
             return 'rgb(' + o((r()*s) + colorIteration + 100) + ',' + o((r()*s) + colorIteration -50) + ',' + o((r()*s) + colorIteration - 50) + ')'; //red shades
         case 1:
-            return 'rgb(' + o((r()*s) + colorIteration + 100) + ',' + o((r()*s) + colorIteration) + ',' + o((r()*s) + colorIteration - 100) + ')'; //orange shades
+            return 'rgb(' + o((r()*s) + colorIteration + 100) + ',' + o((r()*s) + colorIteration + 50) + ',' + o((r()*s) + colorIteration - 100) + ')'; //orange shades
         case 2:
             return 'rgb(' + o((r()*s) + colorIteration) + ',' + o((r()*s) + colorIteration + 50) + ',' + o((r()*s) + colorIteration - 50) + ')'; //green shades
         case 3:
@@ -109,19 +117,6 @@ function changeTileColor(e) {
     else {
         e.target.style.backgroundColor = defaultColor;
     }
-}
-
-    
-function chooseNumberOfSquares() {
-    let numberOfSquares = parseInt(prompt("Please choose the amount of squares per side"))
-        
-    while (numberOfSquares > 100 || numberOfSquares <= 0 || isNaN(numberOfSquares) ) {
-        console.log(numberOfSquares)
-        numberOfSquares = parseInt(prompt("Pleaes choose a real number between 1 and 100"))
-    }
-    
-    deleteGrid()
-    createGrid(numberOfSquares)
 }
 
 function deleteGrid() {
