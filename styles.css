@@ -1,9 +1,9 @@
 body {
-    background-image: linear-gradient(to right, #c6ffdd, rgb(255, 255, 180), pink);
+    background-image: linear-gradient(to right, #c6ffdd, #ffffb4, #ffc0cb);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 #leftDiv {
@@ -17,7 +17,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px
+  gap: 20px
 }
 
 #topMenu {
@@ -30,18 +30,22 @@ body {
 }
 
 .div-grid {
-    border: 0.5px solid lightgrey;
+    border: 0.5px lightgrey;
     box-sizing: border-box;
     background-color: rgb(204, 250, 204);
 }
 
-.colored {
-    background-color: pink;
+.solid-border {
+  border-style: solid; 
 }
+
+/* .colored {
+    background-color: pink;
+} */
 
 .button{
     appearance: none;
-    background-color: rgb(255, 229, 233);
+    background-color: #ffe5e9;
     border: 1px solid rgba(27, 31, 35, 0.15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
