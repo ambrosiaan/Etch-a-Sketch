@@ -94,7 +94,7 @@ function returnColorShade(shadeColorIteration, o,r,s) {
         case 0:
             return 'rgb(' + o((r()*s) + colorIteration + 100) + ',' + o((r()*s) + colorIteration -50) + ',' + o((r()*s) + colorIteration - 50) + ')'; //red shades
         case 1:
-            return 'rgb(' + o((r()*s) + colorIteration + 100) + ',' + o((r()*s) + colorIteration + 50) + ',' + o((r()*s) + colorIteration - 100) + ')'; //orange shades
+            return 'rgb(' + o((r()*s) + colorIteration + 100) + ',' + o((r()*s) + colorIteration + 25) + ',' + o((r()*s) + colorIteration - 150) + ')'; //orange shades
         case 2:
             return 'rgb(' + o((r()*s) + colorIteration) + ',' + o((r()*s) + colorIteration + 50) + ',' + o((r()*s) + colorIteration - 50) + ')'; //green shades
         case 3:
