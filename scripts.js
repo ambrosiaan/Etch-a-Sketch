@@ -40,11 +40,17 @@ function createGrid(numberOfSquares) {
     })
 }
 
+function pencilMode(){
+    eraseMode(false)
+    rainbowMode = false;
+}
+
 function eraseMode(booleanValue){
     eraser = booleanValue
 }
 
 function toggleRainbow(){
+    eraser = false;
     rainbowMode ? rainbowMode = false : rainbowMode = true;
 }
 
